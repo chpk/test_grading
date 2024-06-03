@@ -38,7 +38,7 @@ def evaluate_answer(student_answer, grading_rubric, ground_truth_answer):
     """
 
     response = openai.ChatCompletion.create(
-        model="gpt-4",
+        model="gpt-4o",
         messages=[
             {"role": "system", "content": "You are an intelligent grading assistant."},
             {"role": "user", "content": prompt}
