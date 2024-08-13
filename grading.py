@@ -9,7 +9,7 @@ def evaluate_answer(student_answer, grading_rubric, ground_truth_answer):
 
     Step 1: Carefully read and understand the student's answer, paying attention to key points, reasoning, and evidence provided.
 
-    Step 2: Analyze the grading rubric to identify the criteria and expectations for a high-quality answer. Consider the weightage of each criterion mentioned in the rubric.
+    Step 2: Analyze the 'grading rubric' to identify the criteria and expectations for a high-quality answer. Consider the weightage of each criterion mentioned in the rubric.
 
     Step 3: If a ground truth answer is provided, compare the student's answer with the ground truth answer to assess the level of understanding, accuracy, and completeness.
 
@@ -23,7 +23,7 @@ def evaluate_answer(student_answer, grading_rubric, ground_truth_answer):
 
     Step 8: Summarize your evaluation by providing an overall assessment of the student's answer, highlighting the main strengths, areas for improvement, and the final score.
 
-    Please provide the final score in the first line of your response, followed by the detailed report/answer review.
+    Please provide the final score in the first line of your response, followed by the detailed report/answer review. REMEBER always manintain a consistent grading score, give and justify the same grade for the sudent's assignment, I observed that you are not providing consistent grades, so remeber you have to provide consistent grade to the student, try to be impartial and think critically, and evaluate the student's assignment carefully by considering the asnwer and the grading rubric. provide consistent grading to the stuident assignment based on the rubric.
 
     Student's Answer:
     {student_answer}
@@ -34,13 +34,13 @@ def evaluate_answer(student_answer, grading_rubric, ground_truth_answer):
     Ground Truth Answer (optional):
     {ground_truth_answer}
 
-    Provide your evaluation below, following the steps outlined above. Ensure that your feedback is clear, specific, and actionable, enabling the student to understand their performance and identify areas for improvement.
+    Provide your evaluation below, following the steps outlined above. try to be impartial and think critically, and evaluate the student's assignment carefully by considering the asnwer and the grading rubric. provide consistent grading to the stuident assignment based on the rubric. Ensure that your feedback is clear, specific, and actionable, enabling the student to understand their performance and identify areas for improvement.
     """
 
     response = openai.ChatCompletion.create(
         model="gpt-4o",
         messages=[
-            {"role": "system", "content": "You are an intelligent grading assistant."},
+            {"role": "system", "content": "You are an intelligent grading assistant. try to be impartial and think critically, and evaluate the student's assignment carefully by considering the answer and the grading rubric. provide consistent grading to the stuident assignment based on the rubric"},
             {"role": "user", "content": prompt}
         ]
     )
